@@ -4,6 +4,7 @@
   "description": "Move your app forward with the Uber API",
   "main": "index.js",
   "scripts": {
+    "prestart": "grunt",
     "start": "node index.js"
   },
   "keywords": [
