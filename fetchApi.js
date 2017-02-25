@@ -8,9 +8,16 @@ module.exports = function generateApi (done) {
     request(swaggerUri,
         function (error, response, body) {
             if (!error && response.statusCode == 200) {
-                console.log("generateApi");
+                console.log("generating Api from swagger file at " + swaggerUri);
+                if (!fs.existsSync("lib")) {
+                    fs.mkdirSync("lib");
+                }
                 if (!fs.existsSync("lib/api")) {
                     fs.mkdirSync("lib/api");
+                }
+                if (!fs.existsSync("lib/controllers")) {
+                    fs.mkdirSync("lib/controllers");
+                    fs.writeFileSync('lib/controllers/README.md', 'Put your API controllers in here')
                 }
                 fs.writeFileSync('lib/api/swagger.yaml', body);
                 done();
@@ -19,4 +26,4 @@ module.exports = function generateApi (done) {
                 done();
             }
         });
-}
+};

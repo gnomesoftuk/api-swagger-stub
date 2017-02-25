@@ -19,7 +19,6 @@
   "devDependencies": {
     "grunt": "https://registry.npmjs.org/grunt/-/grunt-1.0.1.tgz",
     "grunt-contrib-jshint": "~1.1.0",
-    "grunt-swagger-js-codegen": "^0.4.6",
     "request": "^2.79.0"
   }
 }
