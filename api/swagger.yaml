@@ -4,7 +4,7 @@ info:
   description: "Move your app forward with the Uber API"
   version: "1.0.0"
   title: "Uber API"
-host: "localhost:8080"
+host: "uber-api-v1.pxgsbds4pp.eu-west-1.elasticbeanstalk.com"
 basePath: "/"
 schemes:
 - "http"
