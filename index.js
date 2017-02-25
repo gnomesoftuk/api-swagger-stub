@@ -11,7 +11,7 @@ var serverPort = normalizePort(process.env.PORT || '8080');
 // swaggerRouter configuration
 var options = {
   swaggerUi: '/swagger.json',
-  controllers: './controllers',
+  controllers: './lib/controllers',
   useStubs: process.env.NODE_ENV === 'development' ? true : false // Conditionally turn on stubs (mock mode)
 };
 
@@ -37,7 +37,7 @@ function normalizePort(val) {
 }
 
 // The Swagger document (require it, build it programmatically, fetch it from a URL, ...)
-var spec = fs.readFileSync('./api/swagger.yaml', 'utf8');
+var spec = fs.readFileSync('./lib//api/swagger.yaml', 'utf8');
 var swaggerDoc = jsyaml.safeLoad(spec);
 
 // Initialize the Swagger middleware
