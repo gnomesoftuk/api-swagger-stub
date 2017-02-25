@@ -1,53 +1,40 @@
 /*global module:false*/
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
-  // Project configuration.
-  grunt.initConfig({
-    // Task configuration.
-    jshint: {
-      options: {
-        curly: true,
-        eqeqeq: true,
-        immed: true,
-        latedef: true,
-        newcap: true,
-        noarg: true,
-        sub: true,
-        undef: true,
-        unused: true,
-        boss: true,
-        eqnull: true,
-        globals: {
-          jQuery: true
+    grunt.registerTask("generateApi", function () {
+        var done = this.async();
+
+        var generateApi = require('./generateApi');
+        generateApi(done);
+    });
+
+    // Project configuration.
+    grunt.initConfig({
+        execute: {
+            generateApi: {
+                src: ['generateApi.js']
+            }
+        },
+        'swagger-js-codegen': {
+            options: {
+                apis: [
+                    {
+                        swagger: 'swagger/_batch.json',
+                        fileName: 'batch.api.28.io.js',
+                        className: 'Locations'
+                    }
+                ],
+                dest: 'lib'
+            },
+            dist: {}
         }
-      },
-      gruntfile: {
-        src: 'Gruntfile.js'
-      },
-      lib_test: {
-        src: ['lib/**/*.js', 'test/**/*.js']
-      }
-    },
-    nodeunit: {
-      files: ['test/**/*_test.js']
-    },
-    watch: {
-      gruntfile: {
-        files: '<%= jshint.gruntfile.src %>',
-        tasks: ['jshint:gruntfile']
-      },
-      lib_test: {
-        files: '<%= jshint.lib_test.src %>',
-        tasks: ['jshint:lib_test', 'nodeunit']
-      }
-    }
-  });
+    });
 
-  // These plugins provide necessary tasks.
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-swagger-js-codegen');
+    // These plugins provide necessary tasks.
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-swagger-js-codegen');
 
-  // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+    // Default task.
+    grunt.registerTask('default', ['generateApi']);
 
 };
