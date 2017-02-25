@@ -4,7 +4,6 @@
   "description": "Move your app forward with the Uber API",
   "main": "index.js",
   "scripts": {
-	"prestart": "npm install",
 	"start": "node index.js"
   },
   "keywords": [
