@@ -1,7 +1,7 @@
 {
-  "name": "uber-api",
+  "name": "api-swagger-stub",
   "version": "1.0.0",
-  "description": "Move your app forward with the Uber API",
+  "description": "A stub API built using swagger-tools",
   "main": "index.js",
   "scripts": {
     "prestart": "grunt",
