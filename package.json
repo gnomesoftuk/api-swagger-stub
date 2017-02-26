@@ -13,13 +13,12 @@
   "license": "Unlicense",
   "private": true,
   "dependencies": {
+    "grunt": "https://registry.npmjs.org/grunt/-/grunt-1.0.1.tgz",
+    "request": "^2.79.0",
     "connect": "^3.2.0",
     "js-yaml": "^3.3.0",
     "swagger-tools": "0.10.1"
   },
   "devDependencies": {
-    "grunt": "https://registry.npmjs.org/grunt/-/grunt-1.0.1.tgz",
-    "grunt-contrib-jshint": "~1.1.0",
-    "request": "^2.79.0"
   }
 }

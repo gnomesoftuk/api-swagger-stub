@@ -8,9 +8,6 @@ module.exports = function (grunt) {
         fetchApi(done);
     });
 
-    // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-contrib-jshint');
-
     // Default task.
     grunt.registerTask('default', ['fetchApi']);
 
