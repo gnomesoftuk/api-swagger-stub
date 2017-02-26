@@ -1,5 +1,6 @@
 {
   "swaggerUri": "https://s3-eu-west-1.amazonaws.com/hermesapi/Schemas/Locations/v1/swagger.yaml",
-  "apiName": "gnomesoft-api-swagger-stub",
+  "application": "location-api-v2"
+  "environment": "gnomesoft-api-swagger-stub",
   "region": "eu-west-1"
 }
